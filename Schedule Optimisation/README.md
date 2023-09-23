@@ -1,23 +1,21 @@
-# schedule-optimisation 🏭
-Solves a mixed integer linear programming problem describing the optimal schedule for a production system
+# Schedule Optimisation 🏭
 
-See the full report <a href="https://github.com/fxn-m/schedule-optimisation/blob/main/MENGM0056_Product_And_Production_Systems_G109.pdf">here</a>
+♻ **Idea**:
+The core concept is to determine the optimal schedule for a production system. Using mixed integer linear programming, it strategically allocates station operators' tasks in a 250-day working cycle, aiming to maximize final product output while avoiding wasteful overproduction.
 
-## Project Summary:
+🛠️ **Approach**:
+Key Performance Indicators to be optimized:
 - SU = System Utilisation
 - WIP = Work in Process
+  
+**Model Structure**:
+- Each day is divided into time steps, with each time step representing an uninterruptible sub-task.
+- The model emphasizes efficiency. If all constraints are met, it prioritizes keeping workers idle over assigning non-value producing tasks.
+- In the system, there's an equivalence between an 'operator' and a 'station'.
+- Average SU is elevated by aligning fewer workers to the most essential tasks when needed.
+- A combination of demand constraint and dependencies between components ensures each component is necessary for the final product.
 
-The system describes a set of station operators whose working cycles are divided into sequentially executed time steps, each day of a 250 working day cycle. Each time step is an uninterruptible sub-task of station operation and also a basic scheduling unit.
-
-An optimal schedule produces as many final products  as possible whilst minimising overproduction of all other parts. With the objective function formulation , if all constraints are met, the optimal solution will tend to assign workers to be idle, instead of assigning workers to jobs that produce no value. This simplifies the calculation of SU and WIP.
-
-In this model, each station is operated throughout the time step by the same operator – such that ‘operator’ and ‘station’ are analogous. 
-
-The average SU can be improved by organising fewer workers to carry out the most valuable tasks at the time they are required – the point of demand. The effect of a demand constraint combined with an encoding of the dependency between components and assemblies in the model creates an artificial, internal demand for each component. This ensures that each activity carried out is necessary to meet the product demand – forcing production of useful components.
-
-Equation 5 adds a constraint that forces a down-time  to be observed after every change between jobs $j$ and $j'$, where $j'$ is any job that can be carried out on the same machine as job $j$, other than $j$.
-
-##### *Objective Function*
+***Objective Function***
 
 $$
 \max_{d,\ a,\ m,\ l} 
@@ -25,28 +23,16 @@ $$
 \sum_{j\in J^l}\sum_{o\in O^l}\sum_{t} l_{j,o,t}
 $$
 
-##### *subject to:*
+***Subject to constraints:***
 
-1. For any operator, at most one job can be in progress at a time t.
+- Operator job limitations.
+- Meeting daily product demand.
+- Maintaining job hierarchy and precedence.
+- Ensuring job downtime after job changes.
+- Decision variables are strictly binary.
 
-$$\sum_{j\in J_s} W_{j,o,t}^s≤1, \ \ ∀ s∈S,o∈O^s,t  $$
+✅ **Result**:
+The outcome of this model is an enhanced production schedule that meets product demand effectively. It reduces wasteful tasks, optimizes station operator's time, and adheres to set constraints.
 
-2. Daily demand must be met by the assemblies in inventory
-The sum of all products made must be greater or equal to the sum of the demand for all t
 
-$$
-\sum_{t}\sum_{o\in O_a}{a_{j,o,t}\ast P_j}-\sum_{t}\mathrm{\Psi}_t\geq0,\ \ \forall\ t,\ j=J_{\bar{\omega}},\ \bar{\omega}=MA
-$$
-
-3. Job hierarchy and precedence
-
-$$ 
-\sum_{t}{\sum_{s\in S}\sum_{{o\in O}_a}{W_{j,o,t}^s\ast P_j}\ \ -\ \sum_{t}\sum_{{o\in O}_a}{a_{\bar{\omega},o,t}\ast P_{\bar{\omega}}}\ \ \geq0,\ \ \forall\ \omega\in\ \mathrm{\Omega},\ j\in\omega,\ t}
-$$
-
-4. If a job starts in a station at a time interval , no other job can start in the same station until after this job is finished and an additional downtime period 
-
-$$ {\tau_{jj^\prime}\ast\ W_{j^\prime,\ o,\ t+1}^s}_\ \le M\left(1-W_{j,o,t}^s\right),\ \ \forall\ o\in O^s,\ j\in J^s,j^\prime\in J^s,\ t\  $$
-
-5. Decision variables are binary
-$$W_(j,o,t)^s∈{0,1},   ∀ j,o,t,s $$
+📄 **Report**: The report can be found [here](https://drive.google.com/file/d/1jc1pwSu0KWL3z2xB4xRNDjy2_dmBP5Kq/view?pli=1). Pages 5-8 cover the formulation and implementation of MILP for scheduling.

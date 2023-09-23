@@ -1,2 +1,0 @@
-﻿obj,no. variables,obj coeffs,constraints,constraint coeffs,constraint relationships,constraint bounds
-max,6,"4,4,6,5,6,6",13,"1;1;0;0;0;0 , 0;0;1;0;0;0 , 0;0;0;1;0;0 , 0;0;0;0;1;1 , 1;0;0;0;0;0, 0;0;1;0;0;0 , 1;0;1;0;0;0 , 0;0;0;1;0;0 , 0;0;0;0;1;0 , 0;0;0;1;1;0 , 0;1;0;0;0;0 , 0;0;0;0;0;1 , 0;1;0;0;0;1","meq,meq,meq,meq,leq,leq,leq,leq,leq,leq,leq,leq,leq","6.3,4.2,7,5.3,6,5,10,10,6,12,4,1.2,4.5"

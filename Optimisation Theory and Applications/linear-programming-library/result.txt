@@ -1,0 +1,18 @@
+LINEAR PROGRAMMING LIBRARY
+results file
+
+
+Final Tableau 
+      x1     x2   x3     s1   s2   s3  Solutions    Ratios
+0    1.0    1.0  1.0    1.0  0.0  0.0      600.0     600.0
+1    1.0    3.0  0.0    0.0  1.0  0.0      600.0       inf
+2    1.0   -1.0  0.0   -1.0  0.0  1.0      300.0     300.0
+3  240.0  210.0  0.0  300.0  0.0  0.0   180000.0  180000.0
+
+Optimal solution: x3 = 600.0
+Objective equation: max z = 60.0*x1 + 90.0*x2 + 300.0*x3
+
+ ... z (from Tableau) = 180000.0
+ ... z (from calculation) = 180000.0
+
+Multiple Optima? Only one optimal solution
