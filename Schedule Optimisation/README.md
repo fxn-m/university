@@ -35,4 +35,4 @@ $$
 The outcome of this model is an enhanced production schedule that meets product demand effectively. It reduces wasteful tasks, optimizes station operator's time, and adheres to set constraints.
 
 
-📄 **Report**: The report can be found [here](https://drive.google.com/file/d/1jc1pwSu0KWL3z2xB4xRNDjy2_dmBP5Kq/view?pli=1). Pages 5-8 cover the formulation and implementation of MILP for scheduling.
+📄 **Report**: The report can be found [here](https://github.com/fxn-m/university/blob/main/Schedule%20Optimisation/Report.pdf). Pages 5-8 cover the formulation and implementation of MILP for scheduling.
