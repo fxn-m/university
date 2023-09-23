@@ -1,0 +1,27 @@
+component_id,component_name,stock,station_type,subassembly,count,seconds_pp,hours_pp,days
+1,base,sheet,die,ma,1,80.92,0.022477778,84.29166667
+2,foot ,sheet,die,sa3,1,161.84,0.044955556,337.1666667
+4,clamp main body,10mm,mill,sa4,1,115.08,0.031966667,119.875
+5,clamp threaded shaft,6mm,lathe,sa4,1,54.74,0.015205556,57.02083333
+6,clamp stopper,sheet,die,sa4,1,80.92,0.022477778,84.29166667
+8,hand crank,8mm,lathe,sa5,1,100.91,0.028030556,105.1145833
+12,legs,sheet,die,ma,1,110.92,0.030811111,115.5416667
+13,leg b,sheet,die,ma,1,110.92,0.030811111,115.5416667
+14,leg c,sheet,die,ma,1,110.92,0.030811111,115.5416667
+15,leg d,sheet,die,ma,1,110.92,0.030811111,115.5416667
+16,cover a,sheet,die,ma,1,65.92,0.018311111,68.66666667
+17,cover b,sheet,die,ma,1,50.92,0.014144444,53.04166667
+18,cover c: metal,sheet,die,sa2,1,50.92,0.014144444,53.04166667
+20,support shaft,7mm,lathe,ma,1,42.75,0.011875,44.53125
+23,handle lock,14mm,mill,sa1,1,163.66,0.045461112,170.4791667
+25,spur gear,14mm ,mill,sa1,1,32.22,0.00895,33.5625
+26,gear bearing/lock handle roller,14mm,mill,ma,1,68.83,0.019119444,71.69791667
+27,washer,sheet,die,ma,1,20.92,0.005811111,21.79166667
+30,adjustable shaft,7mm,lathe,ma,1,118.83,0.033008333,123.78125
+31,bracket,sheet,die,ma,1,80.92,0.022477778,84.29166667
+32,ma,,assembler,,1,225,0.0625,234.375
+33,sa1,,assembler,ma,1,140,0.038888889,145.8333333
+34,sa2,,assembler,ma,1,30,0.008333333,31.25
+35,sa3,,assembler,ma,1,10,0.002777778,10.41666667
+36,sa4,,assembler,,1,31,0.008611111,32.29166667
+37,sa5,,assembler,,1,5,0.001388889,5.208333333

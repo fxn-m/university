@@ -1,0 +1,5 @@
+NON-LINEAR PROGRAMMING LIBRARY
+Felix Newport-Mangell
+log file
+
+Function to optimise: f(x) = initial_func = lambda X: (X[0] - 1) ** 2 + (X[1] - 2) ** 2 + (X[2] - 3) ** 2
